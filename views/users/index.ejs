@@ -9,6 +9,16 @@
   </head>
   <body>
     <h1>Let's Go!</h1>
+    <div>
+      <% if (user) { %>
+      <a href="/logout"><i class="material-icons left"></i>Log Out</a>
+      <% } else { %>
+      <a href="/auth/google"
+        ><i class="material-icons left"></i>Login with Google</a
+      >
+      <% } %>
+    </div>
+
     <h2>About Us</h2>
     <p>
       Austin, Tx is a city with scenic hikes. Whether you're looking for a
