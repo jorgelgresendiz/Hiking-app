@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
-var usersCtrl = require("../controllers/users");
+var ratingsCtrl = require("../controllers/ratings");
 
-router.get("/", usersCtrl.index);
+/* GET    */
 
 module.exports = router;

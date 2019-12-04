@@ -8,6 +8,9 @@ var passport = require("passport");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+var hikesRouter = require("./routes/hikes");
+var reviewsRouter = require("./routes/reviews");
+var ratingsRouter = require("./routes/ratings");
 
 require("dotenv").config();
 
@@ -26,7 +29,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(
   session({
-    secret: "SEIRocks",
+    secret: "SEIRocks!",
     resave: false,
     saveUninitialized: true
   })
@@ -36,6 +39,9 @@ app.use(passport.session());
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/hikes", hikesRouter);
+app.use("/reviews", reviewsRouter);
+app.use("/ratings", ratingsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

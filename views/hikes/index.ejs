@@ -1,3 +1,4 @@
+<%- include('../partials/header') %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,9 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title>Document</title>
+    <title>Home</title>
   </head>
   <body>
-    HIKE PAGE
+    <h1>All Hikes</h1>
+    <tbody>
+      <% hikes.forEach(function(h) { %>
+      <tr>
+        <td><%= h.names %></td>
+        <td><%= h.reviews %></td>
+        <td><%= h.ratings %></td>
+      </tr>
+      <% }); %>
+    </tbody>
   </body>
 </html>

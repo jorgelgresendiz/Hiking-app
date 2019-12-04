@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
-var usersCtrl = require("../controllers/users");
+var reviewsCtrl = require("../controllers/reviews");
 
-router.get("/", usersCtrl.index);
+/* GET all reviews of a hike  */
 
 module.exports = router;

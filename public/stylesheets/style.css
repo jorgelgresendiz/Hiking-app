@@ -7,3 +7,7 @@ body {
 a {
   color: black;
 }
+
+#logo {
+  border-radius: 50%;
+}
