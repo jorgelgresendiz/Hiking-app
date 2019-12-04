@@ -9,6 +9,7 @@ var reviewSchema = new Schema({
 var ratingSchema = new Schema({
   rating: { type: Number }
 });
+//try and console log if the number is actually a number and not a string
 
 // a hike can have many reviews and ratings
 var hikeSchema = new Schema({

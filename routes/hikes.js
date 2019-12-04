@@ -5,7 +5,7 @@ var hikesCtrl = require("../controllers/hikes");
 /* GET all hikes that are added */
 router.get("/", hikesCtrl.index);
 
-/*  a new hike */
+/*  create a new hike and redirect to all hikes */
 router.post("/", hikesCtrl.create);
 
 // CRUD-less route take to new page to create hike
