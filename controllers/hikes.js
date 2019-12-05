@@ -48,4 +48,7 @@ function create(req, res) {
   });
 }
 
-function deleteHike(req, res) {}
+function deleteHike(req, res) {
+  req.user.hikes.pop(req.body);
+  res.redirect("/hikes");
+}
