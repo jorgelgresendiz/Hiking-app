@@ -6,7 +6,7 @@ var hikesCtrl = require("../controllers/hikes");
 router.get("/", hikesCtrl.index);
 
 /*  create a new hike and redirect to all hikes */
-router.post("/hikes", isLoggedIn, hikesCtrl.create);
+router.post("/", isLoggedIn, hikesCtrl.create);
 
 // CRUD-less route take to new page to create hike
 router.get("/new", hikesCtrl.new);

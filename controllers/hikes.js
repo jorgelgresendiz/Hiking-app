@@ -39,7 +39,7 @@ function index(req, res, next) {
 //redirects to a specic hike's page
 function show(req, res) {}
 
-//creates a new hike ad redirects to hikes
+//to create a new hike must go into user and push
 function create(req, res) {
   req.user.hikes.push(req.body);
   req.user.save(function(err) {
