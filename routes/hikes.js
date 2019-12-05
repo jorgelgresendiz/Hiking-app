@@ -9,7 +9,7 @@ router.get("/", hikesCtrl.index);
 router.post("/", hikesCtrl.create);
 
 /* GET and delete a specificied hike */
-router.delete("/hikes/:id", hikesCtrl.delete);
+router.delete("/:id", hikesCtrl.deleteHike);
 
 // CRUD-less route take to new page to create hike
 router.get("/new", hikesCtrl.new);

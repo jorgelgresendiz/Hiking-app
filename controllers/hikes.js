@@ -5,7 +5,7 @@ module.exports = {
   index,
   show,
   create,
-  delete: deleteHike
+  deleteHike
 };
 
 //render to a new page to create a new hike
@@ -48,8 +48,11 @@ function create(req, res) {
 }
 
 function deleteHike(req, res) {
+  console.log("fire");
   User.findOne({ "hikes._id": req.params.id }, function(err, user) {
     user.hikes.id(req.params.id).remove();
+    console.log("fire");
+
     user.save(function(err) {
       res.redirect("/hikes");
     });
