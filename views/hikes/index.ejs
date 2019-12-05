@@ -10,21 +10,16 @@
   </head>
   <body>
     <h1>All Hikes</h1>
-    <thead>
-      <tr>
-        <th>Hiking Trail</th>
-        <th>Location</th>
-      </tr>
-    </thead>
+
     <br />
     <tbody>
       <% users.forEach(function(user) { %> <% user.hikes.forEach(function(h) {
       %>
       <tr>
         <td><%= h.name %></td>
+        |
         <td><%= h.location %></td>
-        <td><a href="/hikes/<%= h._id %>/review">Add a Review</a></td>
-        <td><button>X</button></td>
+        <td><a href="/reviews">Reviews</a></td>
       </tr>
       <% }); %> <% }); %>
     </tbody>

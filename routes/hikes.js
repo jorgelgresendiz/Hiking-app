@@ -6,7 +6,7 @@ var hikesCtrl = require("../controllers/hikes");
 router.get("/", hikesCtrl.index);
 
 /*  create a new hike and redirect to all hikes */
-router.post("/", isLoggedIn, hikesCtrl.create);
+router.post("/", hikesCtrl.create);
 
 /* GET and delete a specificied hike */
 router.delete("/:id", isLoggedIn, hikesCtrl.delete);
