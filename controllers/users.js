@@ -4,5 +4,10 @@ module.exports = {
 };
 
 function index(req, res) {
-  res.render("users/index", { user: req.user });
+  User.find({}, function(err, users) {
+    res.render("users/index", {
+      user: req.user,
+      users
+    });
+  });
 }

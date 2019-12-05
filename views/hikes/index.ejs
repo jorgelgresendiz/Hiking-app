@@ -13,18 +13,17 @@
     <thead>
       <tr>
         <th>Hiking Trail</th>
-        <th>Reviews</th>
-        <th>Rating</th>
+        <th>Location</th>
       </tr>
     </thead>
     <tbody>
-      <% hikes.forEach(function(h) { %>
+      <% users.forEach(function(user) { %> <% user.hikes.forEach(function(h) {
+      %>
       <tr>
-        <td><%= h.names %></td>
-        <td><%= h.reviews %></td>
-        <td><%= h.ratings %></td>
+        <td><%= h.name %></td>
+        <td><%= h.location %></td>
       </tr>
-      <% }); %>
+      <% }); %> <% }); %>
     </tbody>
     <a href="/hikes/new">Add a New Hike</a>
   </body>

@@ -6,9 +6,14 @@ var hikesCtrl = require("../controllers/hikes");
 router.get("/", hikesCtrl.index);
 
 /*  create a new hike and redirect to all hikes */
-router.post("/", hikesCtrl.create);
+router.post("/hikes", isLoggedIn, hikesCtrl.create);
 
 // CRUD-less route take to new page to create hike
 router.get("/new", hikesCtrl.new);
+
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) return next();
+  res.redirect("/auth/google");
+}
 
 module.exports = router;

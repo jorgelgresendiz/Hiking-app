@@ -3,24 +3,18 @@ var Schema = mongoose.Schema;
 
 var reviewSchema = new Schema({
   review: { type: String },
-  date: { type: Date }
-});
-
-var ratingSchema = new Schema({
   rating: { type: Number }
 });
-//try and console log if the number is actually a number and not a string
 
 // a hike can have many reviews and ratings
 var hikeSchema = new Schema({
   name: { type: String },
-  reviews: [reviewSchema],
-  ratings: [ratingSchema]
+  location: { type: String },
+  reviews: [reviewSchema]
 });
 
 //a user can have many hikes
 var userSchema = new Schema({
-  name: { type: String },
   email: { type: String },
   googleId: { type: String },
   hikes: [hikeSchema]
