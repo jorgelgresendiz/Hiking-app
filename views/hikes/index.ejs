@@ -20,6 +20,13 @@
         |
         <td><%= h.location %></td>
         <td><a href="/reviews">Reviews</a></td>
+        <td>
+          <form action="/hikes/<%= h._id %>?_method=DELETE" method="POST" class="secondary-content">
+            <button type="submit">X</button>
+          </form>
+          
+          </form>
+        </td>
       </tr>
       <% }); %> <% }); %>
     </tbody>

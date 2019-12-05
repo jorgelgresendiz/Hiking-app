@@ -48,6 +48,10 @@ function create(req, res) {
 }
 
 function deleteHike(req, res) {
-  req.user.hikes.pop(req.body);
-  res.redirect("/hikes");
+  User.findOne({ "hikes._id": req.params.id }, function(err, user) {
+    user.hikes.id(req.params.id).remove();
+    user.save(function(err) {
+      res.redirect("/hikes");
+    });
+  });
 }
