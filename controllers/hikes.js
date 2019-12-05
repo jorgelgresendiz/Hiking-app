@@ -42,6 +42,7 @@ function show(req, res) {}
 //to create a new hike must go into user and push
 function create(req, res) {
   req.user.hikes.push(req.body);
+  console.log(req.body);
   req.user.save(function(err) {
     res.redirect("/hikes");
   });
