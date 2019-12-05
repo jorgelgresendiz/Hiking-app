@@ -6,13 +6,13 @@ var hikesCtrl = require("../controllers/hikes");
 router.get("/", hikesCtrl.index);
 
 /*  create a new hike and redirect to all hikes */
-router.post("/", hikesCtrl.create);
+router.post("/", isLoggedIn, hikesCtrl.create);
 
 /* GET and delete a specificied hike */
-router.delete("/:id", hikesCtrl.deleteHike);
+router.delete("/:id", isLoggedIn, hikesCtrl.deleteHike);
 
 // CRUD-less route take to new page to create hike
-router.get("/new", hikesCtrl.new);
+router.get("/new", hikesCtrl.newHike);
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next();

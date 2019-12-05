@@ -1,9 +1,9 @@
 var User = require("../models/user");
 
 module.exports = {
-  index
-  //   // create,
-  //   // delete: deleteReview
+  index,
+  newReview
+  // create,
 };
 
 function index(req, res) {
@@ -12,7 +12,8 @@ function index(req, res) {
 
 // function create(req, res) {
 //   res.redirect("/hikes/reviews");
-//   console.log("stuffff");
 // }
 
-// function deleteReview(req, res) {}
+function newReview(req, res) {
+  res.render("reviews/new");
+}

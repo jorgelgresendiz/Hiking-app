@@ -1,7 +1,7 @@
 var User = require("../models/user");
 
 module.exports = {
-  new: newHike,
+  newHike,
   index,
   show,
   create,
