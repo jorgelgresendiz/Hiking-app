@@ -59,7 +59,7 @@ function show(req, res) {
 
         if (h._id == req.params.id) {
           correctHike = h;
-          console.log(`corecthike1`, correctHike);
+          console.log(`stuff`, correctHike);
           res.render("hikes/show", {
             user,
             correctHike,
