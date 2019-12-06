@@ -70,6 +70,12 @@ As a user:
 
 ---
 
+## ERD
+
+![ERD-here](https://i.imgur.com/qJwU4pY.png)
+
+---
+
 ## Author:
 
 Jorge Galvan

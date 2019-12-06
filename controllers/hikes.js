@@ -36,7 +36,10 @@ function index(req, res, next) {
 }
 
 //redirects to a specic hike's page
-function show(req, res) {}
+function show(req, res) {
+  // User.hikes.findById(req.params.id)
+  // res.render("")
+}
 
 //to create a new hike must go into user and push
 function create(req, res) {

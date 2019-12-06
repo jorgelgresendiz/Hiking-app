@@ -19,8 +19,7 @@
         <td><%= h.name %></td>
         |
         <td><%= h.location %></td>
-        <td><a href="/reviews">Reviews</a></td>
-        <td>
+        <td><a href="/hike/<%= h._id %>/reviews">Reviews</a></td>
           <form
             action="/hikes/<%= h._id %>?_method=DELETE"
             method="POST"
@@ -35,6 +34,5 @@
     <br />
     <br />
     <a href="/hikes/new">Add a New Hike</a> <br /><br />
-    <a href="/reviews/new">Add a New Review</a>
   </body>
 </html>

@@ -19,4 +19,7 @@ function isLoggedIn(req, res, next) {
   res.redirect("/auth/google");
 }
 
+/* GET and add a review to a specific hike */
+router.get("/:id/reviews", hikesCtrl.show);
+
 module.exports = router;

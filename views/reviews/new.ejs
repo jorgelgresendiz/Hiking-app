@@ -9,9 +9,13 @@
     <title>Reviews</title>
   </head>
   <body>
-    <h2>Review</h2>
-    <h2>Rating</h2>
+    <form action="/reviews" method="POST">
+      <label>Review: </label>
+      <input type="text" name="review" />
+      <label>Rating: </label>
+      <input type="text" name="rating" />
+    </form>
   </body>
-  <form action=""><button>Add Review</button></form>
+  <button>Add Review</button>
   <a href="/hikes">Cancel</a>
 </html>
