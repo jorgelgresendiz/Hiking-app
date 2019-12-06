@@ -85,6 +85,12 @@ As a user:
 
 ---
 
+## Heroku
+
+<a href="https://git.heroku.com/hiking-app-sei.git">Hiking App</a>
+
+---
+
 ## Author:
 
 Jorge Galvan
