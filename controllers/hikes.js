@@ -37,8 +37,25 @@ function index(req, res, next) {
 
 //redirects to a specic hike's page
 function show(req, res) {
-  // User.hikes.findById(req.params.id)
-  // res.render("")
+  let modelQuery = req.query.name
+    ? { name: new RegExp(req.query.name, "i") }
+    : {};
+  // Default to sorting by name
+  let sortKey = req.query.sort || "name";
+  User.find(modelQuery)
+    .sort(sortKey)
+    .exec(function(err, users) {
+      if (err) return next(err);
+      User.findById(req.params.id, function(err, hikes) {
+        res.render("hikes/show", {
+          users,
+          hikes,
+          user: req.user,
+          name: req.query.name,
+          hikes
+        });
+      });
+    });
 }
 
 //to create a new hike must go into user and push
