@@ -12,7 +12,7 @@ function index(req, res) {
 
 function create(req, res) {
   req.user.hikes.reviews.push(req.body);
-  console.log(req.body);
+  console.log(`helloooo`, req.body);
   req.user.save(function(err) {
     res.redirect("/hikes");
   });

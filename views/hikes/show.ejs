@@ -22,7 +22,7 @@
 
     <h2>Add a Review</h2>
     <section id="add-review">
-      <form action="" method="POST">
+      <form action="/hikes/<%=correctHike._id%>/reviews" method="POST">
         <label>Reviews:</label>
         <input type="text" name="review" />
         <label>Ratings:</label>
@@ -30,6 +30,7 @@
         <br />
         <input type="submit" value="Add Review" />
       </form>
+
       <a href="/hikes">Cancel</a>
     </section>
   </body>
