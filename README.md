@@ -76,6 +76,15 @@ As a user:
 
 ---
 
+## Next Steps
+
+- Use GoogleMaps API to add physical address and map snippet of the the trail
+- Add button that allows users to add pictures of the hike they have visited
+- Render pages such that they are displayed by rating
+- STYLE
+
+---
+
 ## Author:
 
 Jorge Galvan
