@@ -6,7 +6,7 @@ var reviewsCtrl = require("../controllers/reviews");
 router.get("/", reviewsCtrl.index);
 
 // /*  create a new review and redirect to that page's reviews */
-// router.post("/", reviewsCtrl.create);
+router.post("/", reviewsCtrl.create);
 
 // // CRUD-less route take to new page to create hike
 router.get("/new", reviewsCtrl.newReview);

@@ -37,25 +37,39 @@ function index(req, res, next) {
 
 //redirects to a specic hike's page
 function show(req, res) {
-  let modelQuery = req.query.name
-    ? { name: new RegExp(req.query.name, "i") }
-    : {};
-  // Default to sorting by name
-  let sortKey = req.query.sort || "name";
-  User.find(modelQuery)
-    .sort(sortKey)
-    .exec(function(err, users) {
-      if (err) return next(err);
-      User.findById(req.params.id, function(err, hikes) {
-        res.render("hikes/show", {
-          users,
-          hikes,
-          user: req.user,
-          name: req.query.name,
-          hikes
-        });
+  // let modelQuery = req.query.name
+  //   ? { name: new RegExp(req.query.name, "i") }
+  //   : {};
+  // // Default to sorting by name
+  // let sortKey = req.query.sort || "name";
+  // User.find(modelQuery)
+  //   .sort(sortKey)
+  //   .exec(function(err, users) {
+  //     if (err) return next(err);
+  // console.log(`above find one`, req.user);
+  User.findOne({ _id: req.user._id })
+    // .populate("hikes")
+    .exec((err, user) => {
+      let hikes = user.hikes;
+      console.log(`hikes`, user.hikes);
+      hikes.forEach(function(h) {
+        let correctHike = "";
+        console.log(`req.params._id`, req.params._id);
+        console.log(`h`, req.params._id);
+
+        if (h._id == req.params.id) {
+          correctHike = h;
+          console.log(`corecthike1`, correctHike);
+          res.render("hikes/show", {
+            user,
+            correctHike,
+            user: req.user,
+            name: req.query.name
+          });
+        }
       });
     });
+  // });
 }
 
 //to create a new hike must go into user and push

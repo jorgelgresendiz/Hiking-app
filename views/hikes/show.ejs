@@ -1,12 +1,35 @@
+<%- include('../partials/header') %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Add a Review</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Reviews</title>
   </head>
   <body>
-    Add a review here!
+    <h1>Hike Details</h1>
+    <%=user.hikes%>
+    <br /><br />
+
+    <h2>Add a Review</h2>
+    <section id="add-review">
+      <form action="" method="POST">
+        <label>Reviews:</label>
+        <input type="text" name="review" />
+        <label>Ratings:</label>
+        <input type="text" name="rating" />
+        <br />
+        <input type="submit" value="Add Review" />
+      </form>
+      <a href="/hikes">Cancel</a>
+    </section>
   </body>
 </html>
