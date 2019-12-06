@@ -87,7 +87,7 @@ As a user:
 
 ## Heroku
 
-<a href="https://git.heroku.com/hiking-app-sei.git">Hiking App</a>
+<a href="https://hiking-app-sei.herokuapp.com/">Hiking App</a>
 
 ---
 
